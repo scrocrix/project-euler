@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{algorithm2e}
+\usepackage{listings}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+\begin{align*}
+    f(n) = \sum_{i=0 \text{ and } x \in n}^{n}{
+        \begin{cases}
+            x, \text{if } i \bmod 3 = 0 \lor i \bmod 5 = 0\\
+            nothing, \text{otherwise}
+        \end{cases}
+    }
+\end{align*}
+\end{document}
