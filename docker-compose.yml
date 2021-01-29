@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  app:
+    image: gcc
+    container_name: scrocrix-project-euler
+    command: bash -c "while true; do sleep 1000; done"
+    working_dir: /etc/local/scrocrix-project-euler
+    volumes:
+      - ./:/etc/local/scrocrix-project-euler
