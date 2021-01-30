@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{algorithm2e}
+\usepackage{listings}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+\begin{align*}
+    f(l) = \sum_{i=0}^{s \leq l}{
+        f(t_{1}, t_{2}) = \begin{cases}
+            1, \text{if } i = 1\\
+            2, \text{if } i = 2\\
+            t_{1} = t_{2} \land t_{2} = (t_{1} + t_{2}), \text{if } (t_{1} + t_{2}) \bmod 2
+        \end{cases}
+    }
+\end{align*}
+\end{document}
