@@ -1,27 +1,30 @@
 classdef EvenFibonacciNumbers
-    properties
-        sequence = []
-    end
     methods
-        % generateFibonacciSequence is responsible for recursively
-        % appending product of the formula f(n) = fn - 1 + fn - 2 to
-        % the sequence array.
-        function obj = generateFibonacciSequence(obj, terms)            
+        % sum is responsible for recursively appending product of the
+        % formula f(n) = fn - 1 + fn - 2, and then verify rather the
+        % current term is an even number.
+        function sum = sum(~, limit)
+            sum = 0;
             t1 = 1;
             t2 = 2;
-            for i = 1:terms
+            i = 1;
+            while sum < limit
                 if i == 1
-                    obj.sequence(end+1) = t1;
+                    i = i + 1;
                     continue;
                 end
                 if i == 2
-                    obj.sequence(end+1) = t2;
+                    i = i + 1;
+                    sum = sum + t2;
                     continue;
                 end
-                term = t1 + t2;
+                t = t1 + t2;
                 t1 = t2;
-                t2 = term;
-                obj.sequence(end+1) = term;
+                t2 = t;
+                if (mod(t, 2) == 0)
+                    sum = sum + t;
+                end
+                i = i + 1;
              end
         end
     end
