@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{algorithm2e}
+\usepackage{listings}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+% Where P is list of prime numbers, and \text{P_{i}} is the ith term in the list.
+% We declare a recursive function \text{a(n, P_{i})} where \text{P_{1} = 2} responsible
+% for performing a Prime Factorization and return a list of factor numbers of n.
+
+\begin{align*}
+    a(n, P_{i}) = \begin{cases}
+                1, \text{if } n = 1\\
+                a(n, P_{i}), \text{if } n \bmod 2 = 0\\
+                a(n, P_{i + 1}), otherwise
+            \end{cases}
+\end{align*}
+
+% Within the parenthesis we apply quick sort in a descendent order and return the first
+% term of the list.
+
+\begin{align*}
+    f(n) = \left( \sum_{x \in a(n, P_{i})}^{|a(n, P_{i})|}{2T(\frac{x + 1}{2})} \right)_{1}
+\end{align*}
+\end{document}
