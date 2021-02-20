@@ -9,7 +9,7 @@ classdef TenThousand1stPrimeTest < matlab.unittest.TestCase
     end
     methods(Test)
         function testCalculateSimulatesExampleBehavior(testCase)
-            testCase.verifyEqual(testCase.sut.calculate(10001), 11);
+            testCase.verifyEqual(testCase.sut.calculate(10001), 104743);
         end
     end
 end
