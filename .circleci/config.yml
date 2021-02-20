@@ -1,0 +1,19 @@
+version: 2.1
+orbs:
+  matlab: mathworks/matlab
+jobs:
+  test:
+    machine:
+      image: 'ubuntu-1604:201903-01'
+    steps:
+      - checkout
+      - matlab/install
+      - matlab/run-tests:
+          test-results-junit: test-results/matlab/results.xml
+      - store_test_results:
+          path: test-results
+workflow:
+    version: 2
+    ci:
+        jobs:
+            - test
